@@ -30,7 +30,7 @@ ALTER TABLE desafio_curadoria."SEQ_TB_ESTABELECIMENTO_ID" OWNER TO postgres;
 CREATE TABLE desafio_curadoria."TB_ESTABELECIMENTO"(
     id          bigint DEFAULT nextval('desafio_curadoria."SEQ_TB_ESTABELECIMENTO_ID"'::regclass) NOT NULL,
     ap_coduni	integer, 
-    ap_mvm	character(6),
+    ap_mvm	    character(6),
     ap_condic 	character(2),
     ap_gestao	integer,	
     ap_ufmun	integer,	
@@ -46,6 +46,7 @@ WITH (
 );
 
 ALTER TABLE desafio_curadoria."TB_ESTABELECIMENTO" OWNER TO postgres;
+
 
 
 INSERT INTO desafio_curadoria."TB_ESTABELECIMENTO"(
@@ -83,4 +84,3 @@ CREATE INDEX "IDX_TB_ESTABELECIMENTO_ID" ON desafio_curadoria."TB_ESTABELECIMENT
 CREATE INDEX "IDX_TB_ESTABELECIMENTO_AP_CODUNI" ON desafio_curadoria."TB_ESTABELECIMENTO" USING btree (ap_coduni);
 
 DROP TABLE IF EXISTS desafio_curadoria."TB_ESTABELECIMENTO_AUX";
-

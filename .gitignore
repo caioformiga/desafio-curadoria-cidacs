@@ -1,4 +1,3 @@
-# Data
 A1/dbc/*.dbc
 
 A2/*.Rhistory
@@ -6,6 +5,8 @@ A2/*.Rhistory
 A2/csv/*.csv
 
 A2/data/*
+
+A2/sql/rascunho.sql
 
 
 

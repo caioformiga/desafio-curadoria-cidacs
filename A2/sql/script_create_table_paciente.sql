@@ -13,6 +13,7 @@ FROM desafio_curadoria."WH_AMAPAC";
 ALTER TABLE desafio_curadoria."TB_PACIENTE_AUX" OWNER TO postgres;
 
 
+
 DROP TABLE IF EXISTS desafio_curadoria."TB_PACIENTE";
 
 DROP SEQUENCE IF EXISTS desafio_curadoria."SEQ_TB_PACIENTE_ID";
@@ -65,4 +66,3 @@ CREATE INDEX "IDX_TB_PACIENTE_ID" ON desafio_curadoria."TB_PACIENTE" USING btree
 CREATE INDEX "IDX_TB_PACIENTE_AP_CNSPCN" ON desafio_curadoria."TB_PACIENTE" USING btree (ap_cnspcn);
 
 DROP TABLE IF EXISTS desafio_curadoria."TB_PACIENTE_AUX";
-

@@ -2,6 +2,7 @@
 --# verificar se existe um usuário postgres
 --# verificar se existe o esquema "desafio_curadoria" existe
 --# executar o script no Query Browser
+
 CREATE TABLE desafio_curadoria."WH_AMAPAC"
 (
    ap_mvm	    character(6),
@@ -62,8 +63,6 @@ CREATE TABLE desafio_curadoria."WH_AMAPAC"
 ) 
 WITH (
   OIDS = FALSE
-)
-;
+);
 
-ALTER TABLE desafio_curadoria."WH_AMAPAC"
-  OWNER TO postgres;
+ALTER TABLE desafio_curadoria."WH_AMAPAC" OWNER TO postgres;
