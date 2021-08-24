@@ -7,6 +7,7 @@ Repositório para entrega dos artefatos relacionados ao desafio da vaga de curad
 Artefatos que auxiliaram na análise da estrutura dos arquivos de disseminação (em DBC) relacionados com a APAC de medicamentos (AMAPAC) para definir layout do modelo de dados do warehouse e das tabelas usadas para manter os dados.
 
 **script_wget_from_DATASUS.sh**
+
 Para baixar os dados da AMAPAC, em arquivos DBC, do ano de 2021, mês de janeiro (01), de todos os estados do Brasil, use o script em bash, navegue até a página A1 e digite o comando abaixo, e os arquivos serão salvos na pasta dbc, que será criada automáticamente caso ainda não exista.
 
 *bash ./script_wget_from_DATASUS.sh*
@@ -16,6 +17,7 @@ obs: o script utiliza o wget para fazer download no link ftp do DATASUSU, verifi
 
 
 **layout/**
+
 Mantem os arquivos que foram usadaos para definir o layouto do banco de dados relacioanl
 
 ***
