@@ -1,11 +1,11 @@
 # Data
 A1/dbc/*.dbc
 
-A1/*.Rhistory
+A2/*.Rhistory
 
-A1/csv/*.csv
+A2/csv/*.csv
 
-A1/sql/*.sql
+A2/sql/*.sql
 
 
 
