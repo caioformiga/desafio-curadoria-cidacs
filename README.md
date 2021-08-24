@@ -1,4 +1,7 @@
 # desafio-curadoria-cidacs
 Repositório para entrega dos artefatos relacionados ao desafio da vaga de curadoria no CIDACS.
 
-A-1. Analisar a estrutura dos arquivos de disseminação da APAC (em DBC) de medicamentos e definir modelo de dados relacional que considere mais apropriado.
+/A1
+Artefatos que auxiliaram na analise da estrutura dos arquivos de disseminação (em DBC) relacionados com a APAC de medicamentos (AMAPAC) para definir layout do modelo de dados do warehouse e das tabelas usadas para manter os dados.
+
+
