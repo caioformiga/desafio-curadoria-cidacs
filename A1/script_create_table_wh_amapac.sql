@@ -21,10 +21,6 @@ CREATE SCHEMA desafio_curadoria
     ap_mn_ind	character(1),
     ap_cnpjcpf	character(14),
     ap_cnpjmnt	character(14),
-/* 
-    campo latin1 que quando convertido para utf8
-    ap_cnspcn	character(15), 
-*/
     ap_cnspcn	text, 
     ap_coidade	character(1),
     ap_nuidade	character(2),
@@ -64,7 +60,7 @@ CREATE SCHEMA desafio_curadoria
     ap_natju	character(4),
     wh_year  	smallint,
     wh_month	smallint,
-    wh_uf	character(2),
+    wh_uf	    character(2),
     wh_dbc_file	character(12)
 )
 WITH (
