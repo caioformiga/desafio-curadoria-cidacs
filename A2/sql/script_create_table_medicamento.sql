@@ -110,3 +110,83 @@ WITH (
 );
 
 ALTER TABLE desafio_curadoria."TB_MEDICAMENTO" OWNER TO postgres;
+
+
+INSERT INTO desafio_curadoria."TB_MEDICAMENTO"(
+    ap_autoriz,
+    id_pcn,
+    id_estab,
+    ap_cmp,
+    ap_pripal,
+    ap_vl_ap,
+    ap_nuidade,
+    ap_ufdif,
+    ap_mndif,
+    ap_dtinic,
+    ap_dtfim,
+    ap_tpaten,
+    ap_tpapac,
+    ap_motsai,
+    ap_obito,
+    ap_encerr,
+    ap_perman,
+    ap_alta,
+    ap_transf,
+    ap_dtocor,
+    ap_codemi,
+    ap_catend,
+    ap_apacant,
+    ap_unisol,
+    ap_dtsolic,
+    ap_dtaut,
+    ap_cidcas,
+    ap_cidpri,
+    ap_cidsec,
+    am_peso,
+    am_altura,
+    am_transpl,
+    am_qtdtran,
+    am_gestant
+) 
+SELECT DISTINCT
+    aux.ap_autoriz,
+    pcn.id as id_pcn,
+    estab.id as id_estab,
+    aux.ap_cmp,
+    aux.ap_pripal,
+    aux.ap_vl_ap,
+    aux.ap_nuidade,
+    aux.ap_ufdif,
+    aux.ap_mndif,
+    aux.ap_dtinic,
+    aux.ap_dtfim,
+    aux.ap_tpaten,
+    aux.ap_tpapac,
+    aux.ap_motsai,
+    aux.ap_obito,
+    aux.ap_encerr,
+    aux.ap_perman,
+    aux.ap_alta,
+    aux.ap_transf,
+    aux.ap_dtocor,
+    aux.ap_codemi,
+    aux.ap_catend,
+    aux.ap_apacant,
+    aux.ap_unisol,
+    aux.ap_dtsolic,
+    aux.ap_dtaut,
+    aux.ap_cidcas,
+    aux.ap_cidpri,
+    aux.ap_cidsec,
+    aux.am_peso,
+    aux.am_altura,
+    aux.am_transpl,
+    aux.am_qtdtran,
+    aux.am_gestant
+FROM desafio_curadoria."TB_MEDICAMENTO_AUX" as aux
+LEFT JOIN desafio_curadoria."TB_PACIENTE" as pcn
+ON (aux.ap_cnspcn = pcn.ap_cnspcn)
+LEFT JOIN desafio_curadoria."TB_ESTABELECIMENTO" as estab
+ON (aux.ap_coduni = estab.ap_coduni)
+
+
