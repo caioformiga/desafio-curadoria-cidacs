@@ -1,6 +1,7 @@
 # requisitos
 # install.packages("read.dbc")        # https://github.com/danicat/read.dbc
-# definir variavel de ambiente CIDACS_HOME
+# definir variavel de ambiente CIDACS_HOME como pasta path do projeto após clonar do repositório
+# se clonado em $HOME/Downloads, CIDACS_HOME=$HOME/Downloads/desafio-curadoria-cidacs 
 
 CIDACS_HOME = Sys.getenv(c("CIDACS_HOME"))
 
@@ -8,6 +9,8 @@ A2_PATH <-paste(CIDACS_HOME, "A2", sep ="/")
 setwd(A2_PATH)
 dir.create("./csv")
 CSV_PATH = paste(A2_PATH, "csv", sep ="/")
+
+RSCRIPT_PATH <- paste(A2_PATH, "r", sep ="/")
 
 A1_PATH <-paste(CIDACS_HOME, "A1", sep ="/")
 DBC_PATH = paste(A1_PATH, "dbc", sep ="/")
