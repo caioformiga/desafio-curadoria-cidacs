@@ -1,9 +1,13 @@
 # Data
 A1/dbc/*.dbc
 
+A1/*.Rhistory
+
 A1/csv/*.csv
 
 A1/sql/*.txt
+
+
 
 
 
