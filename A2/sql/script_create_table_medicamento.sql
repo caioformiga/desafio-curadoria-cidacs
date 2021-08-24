@@ -40,6 +40,10 @@ FROM desafio_curadoria."WH_AMAPAC" as wh;
 
 ALTER TABLE desafio_curadoria."TB_MEDICAMENTO_AUX" OWNER TO postgres;
 
+CREATE INDEX "IDX_TB_MEDICAMENTO_AUX_AP_CODUNI" ON desafio_curadoria."TB_MEDICAMENTO_AUX" USING btree (ap_coduni);
+
+CREATE INDEX "IDX_TB_MEDICAMENTO_AUX_AP_CNSPCN" ON desafio_curadoria."TB_MEDICAMENTO_AUX" USING btree (ap_cnspcn);
+
 
 
 DROP TABLE IF EXISTS desafio_curadoria."TB_MEDICAMENTO_AUTORIZACAO_DUPLICADA";
@@ -52,6 +56,14 @@ HAVING count(DISTINCT aux.ap_cnspcn) > 1
 ORDER BY 2 DESC;
 
 ALTER TABLE desafio_curadoria."TB_MEDICAMENTO_AUTORIZACAO_DUPLICADA" OWNER TO postgres;
+
+
+
+DELETE FROM desafio_curadoria."TB_MEDICAMENTO_AUX" as aux
+WHERE aux.ap_autoriz IN (
+	  SELECT dupl.ap_autoriz
+	  FROM desafio_curadoria."TB_MEDICAMENTO_AUTORIZACAO_DUPLICADA" as dupl
+)
 
 
 
