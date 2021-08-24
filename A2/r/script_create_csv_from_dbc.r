@@ -1,15 +1,15 @@
 # requisitos
 # install.packages("read.dbc")        # https://github.com/danicat/read.dbc
-# definir variavel de ambiente HOME_CIDACS
+# definir variavel de ambiente CIDACS_HOME
 
-HOME_CIDACS = Sys.getenv(c("HOME_CIDACS"))
+CIDACS_HOME = Sys.getenv(c("CIDACS_HOME"))
 
-A2_PATH <-paste(HOME_CIDACS, "A2", sep ="/")
+A2_PATH <-paste(CIDACS_HOME, "A2", sep ="/")
 setwd(A2_PATH)
 dir.create("./csv")
 CSV_PATH = paste(A2_PATH, "csv", sep ="/")
 
-A1_PATH <-paste(HOME_CIDACS, "A1", sep ="/")
+A1_PATH <-paste(CIDACS_HOME, "A1", sep ="/")
 DBC_PATH = paste(A1_PATH, "dbc", sep ="/")
 dbc_file_path <- paste(DBC_PATH, "AM_UF_2101.dbc", sep ="/")
 
