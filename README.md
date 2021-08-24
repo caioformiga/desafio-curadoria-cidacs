@@ -18,7 +18,9 @@ obs: o script utiliza o wget para fazer download no link ftp do DATASUSU, verifi
 
 **layout/**
 
-Mantem os arquivos que foram usadaos para definir o layouto do banco de dados relacioanl
+Mantem os arquivos que foram usadaos para definir o layouto do banco de dados relacioanl. A modelagem foi feita usando três entidades que são armazenadass em tabelas: *tb_paciente, tb_esstabelecimento e tb_medicamento*; além disso foi usada uma tabela para receber dados de um arquivo exertno (.CSV), funcionando como um warehouse, para armazenar os dados antes de realizar outras operações: *wh_amapac*.
+
+
 
 ***
 
