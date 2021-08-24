@@ -1,13 +1,10 @@
-# verificar se existe uma instancia do postgresql funcionando
-# verificar se existe um usuário postgres
-# executar o script no Query Browser
-
-CREATE SCHEMA desafio_curadoria
-  AUTHORIZATION postgres;
-
-﻿CREATE TABLE desafio_curadoria."WH_AMPAC"
+--# verificar se existe uma instancia do postgresql funcionando
+--# verificar se existe um usuário postgres
+--# verificar se existe o esquema "desafio_curadoria" existe
+--# executar o script no Query Browser
+CREATE TABLE desafio_curadoria."WH_AMAPAC"
 (
-    ap_mvm	    character(6),
+   ap_mvm	    character(6),
     ap_condic	character(2),
     ap_gestao	character(6),
     ap_coduni	character(7),
@@ -62,10 +59,11 @@ CREATE SCHEMA desafio_curadoria
     wh_month	smallint,
     wh_uf	    character(2),
     wh_dbc_file	character(12)
-)
+) 
 WITH (
-  OIDS=FALSE
-);
+  OIDS = FALSE
+)
+;
 
-ALTER TABLE desafio_curadoria."WH_AMPAC"
+ALTER TABLE desafio_curadoria."WH_AMAPAC"
   OWNER TO postgres;
