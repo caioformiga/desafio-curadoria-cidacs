@@ -35,15 +35,17 @@ for (uf in LISTA_UF_ESTADOS) {
   
   # concatenar o nome do arquivo para gerar o path completo
   csv_file_path <- paste(CSV_PATH, csv_file, sep ="/")
-
-  amapac_dF_ORDENADO <- amapac_df[c("AP_MVM","AP_CONDIC","AP_GESTAO", "AP_CODUNI", "AP_AUTORIZ", "AP_CMP", "AP_PRIPAL", "AP_VL_AP", "AP_UFMUN", "AP_TPUPS", "AP_TIPPRE", "AP_MN_IND", "AP_CNPJCPF", "AP_CNPJMNT", "AP_CNSPCN", "AP_COIDADE", "AP_NUIDADE", "AP_SEXO", "AP_RACACOR", "AP_MUNPCN", "AP_UFNACIO", "AP_CEPPCN", "AP_UFDIF", "AP_MNDIF", "AP_DTINIC", "AP_DTFIM", "AP_TPATEN", "AP_TPAPAC", "AP_MOTSAI", "AP_OBITO", "AP_ENCERR", "AP_PERMAN", "AP_ALTA", "AP_TRANSF", "AP_DTOCOR", "AP_CODEMI", "AP_CATEND", "AP_APACANT", "AP_UNISOL", "AP_DTSOLIC", "AP_DTAUT", "AP_CIDCAS", "AP_CIDPRI", "AP_CIDSEC", "AP_ETNIA", "AM_PESO", "AM_ALTURA", "AM_TRANSPL", "AM_QTDTRAN", "AM_GESTANT", "AP_NATJUR")]
+  
+  colnames(amapac_df) <- c("ap_mvm","ap_condic","ap_gestao", "ap_coduni", "ap_autoriz", "ap_cmp", "ap_pripal", "ap_vl_ap", "ap_ufmun", "ap_tpups", "ap_tippre", "ap_mn_ind", "ap_cnpjcpf", "ap_cnpjmnt", "ap_cnspcn", "ap_coidade", "ap_nuidade", "ap_sexo", "ap_racacor", "ap_munpcn", "ap_ufnacio", "ap_ceppcn", "ap_ufdif", "ap_mndif", "ap_dtinic", "ap_dtfim", "ap_tpaten", "ap_tpapac", "ap_motsai", "ap_obito", "ap_encerr", "ap_perman", "ap_alta", "ap_transf", "ap_dtocor", "ap_codemi", "ap_catend", "ap_apacant", "ap_unisol", "ap_dtsolic", "ap_dtaut", "ap_cidcas", "ap_cidpri", "ap_cidsec", "ap_etnia", "am_peso", "am_altura", "am_transpl", "am_qtdtran", "am_gestant", "ap_natjur")
+  
+  amapac_dF_ORDENADO <- amapac_df[c("ap_mvm","ap_condic","ap_gestao", "ap_coduni", "ap_autoriz", "ap_cmp", "ap_pripal", "ap_vl_ap", "ap_ufmun", "ap_tpups", "ap_tippre", "ap_mn_ind", "ap_cnpjcpf", "ap_cnpjmnt", "ap_cnspcn", "ap_coidade", "ap_nuidade", "ap_sexo", "ap_racacor", "ap_munpcn", "ap_ufnacio", "ap_ceppcn", "ap_ufdif", "ap_mndif", "ap_dtinic", "ap_dtfim", "ap_tpaten", "ap_tpapac", "ap_motsai", "ap_obito", "ap_encerr", "ap_perman", "ap_alta", "ap_transf", "ap_dtocor", "ap_codemi", "ap_catend", "ap_apacant", "ap_unisol", "ap_dtsolic", "ap_dtaut", "ap_cidcas", "ap_cidpri", "ap_cidsec", "ap_etnia", "am_peso", "am_altura", "am_transpl", "am_qtdtran", "am_gestant", "ap_natjur")]
   amapac_df <- amapac_dF_ORDENADO
   
   # adiciona QUATRO colunas
-  amapac_df$WH_YEAR <- 2021
-  amapac_df$WH_MONTH <- 01
-  amapac_df$WH_UF <- uf
-  amapac_df$WH_DBC_SOURCE_FILE <- gsub('_UF_', uf, 'AM_UF_2101.dbc')
+  amapac_df$wh_year <- 2021
+  amapac_df$wh_month <- 01
+  amapac_df$wh_uf <- uf
+  amapac_df$wh_dbc_source_file <- gsub('_UF_', uf, 'AM_UF_2101.dbc')
   
   write.csv(amapac_df, csv_file_path, row.names = FALSE, fileEncoding="UTF8");
 }
