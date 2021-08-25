@@ -68,3 +68,16 @@ obs: uma 5ª tabela poderá ser criada (TB_MEDICAMENTO_AUTORIZACAO_DUPLICADA) pa
 
 Na sub pasta *modelagem* é posssivel visualizar o diagrama gerado via schemaspy, acessse o arquivo index [A2/sql/modelagem/index.html].
 
+
+***
+
+# B1
+
+Foi escrito em Python um script, que execute em um notebook Jupyter, para acessar os dados da APAC de medicamentos no PostgreSQL. Ao final da leitura dos dados é gerado um arquivo .CSV na pasta B1/. Este arquivo foi usadao para fazer análise no item seguinte.
+
+
+***
+
+# B2
+
+Foi escrito em Python um script, que execute em um notebook Jupyter, para acessar os dados de um .CSV e realizar alguns procedimentos de análise. Conforme o documento (análise descritiva foi realizada para o dado Valor Total da APAC Aprovado.pdf) o valor média com Medicamentos no APAC estava equivocado (260.025,14), valor que supera muito o custo mensal. Após algumas análises foi detecdado que o valor correto seria 175,73. 
