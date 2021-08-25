@@ -64,7 +64,7 @@ export port=" "
 
 Uma vez importado os dados de definido *wh_amapac* é possível preencher as outras 3 tabelas do modelo (ver layout). Elaborei um script (*DML_selecet_from_warehouse_insert_at_tables.sql*) que preenche os dados para 3 entidades: *tb_paciente, tb_esstabelecimento e tb_medicamento*. 
 
-obs: ao final do processamento uma 5ª tabela poderá ser criada (TB_MEDICAMENTO_AUTORIZACAO_DUPLICADA) para verificar se há registros errados.
+obs: uma 5ª tabela poderá ser criada (TB_MEDICAMENTO_AUTORIZACAO_DUPLICADA) para verificar se há registros errados.
 
-Na sub pasta *modelagem* é posssivel localizar o diagrama completo gerado via schemaspy [https://schemaspy.readthedocs.io/en/latest/started.html]. BAsta acessar o arquivo index [A2/sql/modelagem/index.html] para visualizar detalhes.
+Na sub pasta *modelagem* é posssivel visualizar o diagrama gerado via schemaspy, acessse o arquivo index [A2/sql/modelagem/index.html].
 
