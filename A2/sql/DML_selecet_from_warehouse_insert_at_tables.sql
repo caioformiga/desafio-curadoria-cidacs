@@ -167,6 +167,8 @@ WHERE aux.ap_autoriz IN (
 	  FROM desafio_curadoria."TB_MEDICAMENTO_AUTORIZACAO_DUPLICADA" as dupl
 );
 
+SELECT desafio_curadoria."""FN_MEDICAMENTO_REMOVER_DUPLICADOS"""();
+
 
 INSERT INTO desafio_curadoria."TB_MEDICAMENTO"(
     ap_autoriz,
@@ -243,4 +245,9 @@ FROM desafio_curadoria."TB_MEDICAMENTO_AUX" as aux
 LEFT JOIN desafio_curadoria."TB_PACIENTE" as pcn
 ON (aux.ap_cnspcn = pcn.ap_cnspcn)
 LEFT JOIN desafio_curadoria."TB_ESTABELECIMENTO" as estab
-ON (aux.ap_coduni = estab.ap_coduni)
+ON (aux.ap_coduni = estab.ap_coduni);
+
+DROP TABLE IF EXISTS desafio_curadoria."TB_MEDICAMENTO_AUX";
+
+
+

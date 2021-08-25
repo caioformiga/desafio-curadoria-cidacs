@@ -179,3 +179,28 @@ WITH (
 );
 
 ALTER TABLE desafio_curadoria."TB_MEDICAMENTO" OWNER TO postgres;
+
+
+
+
+-- Function: desafio_curadoria."""FN_MEDICAMENTO_REMOVER_DUPLICADOS"""()
+
+-- DROP FUNCTION desafio_curadoria."""FN_MEDICAMENTO_REMOVER_DUPLICADOS"""();
+
+CREATE OR REPLACE FUNCTION desafio_curadoria."""FN_MEDICAMENTO_REMOVER_DUPLICADOS"""()
+  RETURNS void AS
+$BODY$DECLARE
+  qtd_duplicados int;
+BEGIN
+	SELECT count(*) INTO qtd_duplicados
+	FROM desafio_curadoria."TB_MEDICAMENTO_AUTORIZACAO_DUPLICADA";
+
+	IF (qtd_duplicados <= 0) THEN
+		DROP TABLE IF EXISTS desafio_curadoria."TB_MEDICAMENTO_AUTORIZACAO_DUPLICADA";
+	END IF;
+END;$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+ALTER FUNCTION desafio_curadoria."""FN_MEDICAMENTO_REMOVER_DUPLICADOS"""()
+  OWNER TO postgres;
+

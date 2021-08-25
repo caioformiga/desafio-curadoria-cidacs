@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="postgres" schema="desafio_curadoria" type="PostgreSQL - 10.18 (Ubuntu 10.18-0ubuntu0.18.04.1)">
+   <sequences>
+      <sequence increment="1" name="SEQ_TB_ESTABELECIMENTO_ID" startValue="1"/>
+      <sequence increment="1" name="SEQ_TB_PACIENTE_ID" startValue="1"/>
+   </sequences>
+   <tables>
+      <table name="TB_ESTABELECIMENTO" numRows="249" remarks="" schema="desafio_curadoria" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('desafio_curadoria.&quot;SEQ_TB_ESTABELECIMENTO_ID&quot;'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="ap_coduni" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="ap_mvm" nullable="true" remarks="" size="6" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="ap_condic" nullable="true" remarks="" size="2" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="ap_gestao" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="ap_ufmun" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="ap_tpups" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="ap_tippre" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="ap_mn_ind" nullable="true" remarks="" size="1" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="ap_cnpjcpf" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="ap_cnpjmnt" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="ap_natju" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="tb_estabelecimento_pk_id" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="IDX_TB_ESTABELECIMENTO_AP_CODUNI" unique="false">
+            <column ascending="true" name="ap_coduni"/>
+         </index>
+         <index name="IDX_TB_ESTABELECIMENTO_ID" unique="false">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="TB_MEDICAMENTO" numRows="2046320" remarks="" schema="desafio_curadoria" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="ap_autoriz" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="id_pcn" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="id_estab" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="ap_cmp" nullable="true" remarks="" size="6" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="ap_pripal" nullable="true" remarks="" size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="5" name="ap_vl_ap" nullable="true" remarks="" size="14" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="ap_nuidade" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="ap_ufdif" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="ap_mndif" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="ap_dtinic" nullable="true" remarks="" size="8" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="ap_dtfim" nullable="true" remarks="" size="8" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="ap_tpaten" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="ap_tpapac" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="ap_motsai" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="ap_obito" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="ap_encerr" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="ap_perman" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="ap_alta" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="ap_transf" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="ap_dtocor" nullable="true" remarks="" size="8" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="20" name="ap_codemi" nullable="true" remarks="" size="10" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="21" name="ap_catend" nullable="true" remarks="" size="2" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="22" name="ap_apacant" nullable="true" remarks="" size="13" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="ap_unisol" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="24" name="ap_dtsolic" nullable="true" remarks="" size="8" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="25" name="ap_dtaut" nullable="true" remarks="" size="8" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="26" name="ap_cidcas" nullable="true" remarks="" size="4" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="27" name="ap_cidpri" nullable="true" remarks="" size="4" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="28" name="ap_cidsec" nullable="true" remarks="" size="4" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="29" name="am_peso" nullable="true" remarks="" size="5" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="30" name="am_altura" nullable="true" remarks="" size="5" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="31" name="am_transpl" nullable="true" remarks="" size="1" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="32" name="am_qtdtran" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="33" name="am_gestant" nullable="true" remarks="" size="1" type="bpchar" typeCode="1"/>
+      </table>
+      <table name="TB_PACIENTE" numRows="1862646" remarks="" schema="desafio_curadoria" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('desafio_curadoria.&quot;SEQ_TB_PACIENTE_ID&quot;'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="ap_cnspcn" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="ap_coidade" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="idade_max" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="ap_sexo" nullable="true" remarks="" size="1" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="ap_racacor" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="ap_ufnacio" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="ap_etnia" nullable="true" remarks="" size="4" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="8" name="peso_medio" nullable="true" remarks="" size="5" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="9" name="altura_media" nullable="true" remarks="" size="5" type="numeric" typeCode="2"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="tb_paciente_pk_id" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="IDX_TB_PACIENTE_AP_CNSPCN" unique="false">
+            <column ascending="true" name="ap_cnspcn"/>
+         </index>
+         <index name="IDX_TB_PACIENTE_ID" unique="false">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="WH_AMAPAC" numRows="2043799" remarks="" schema="desafio_curadoria" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="ap_mvm" nullable="true" remarks="" size="6" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="ap_condic" nullable="true" remarks="" size="2" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="ap_gestao" nullable="true" remarks="" size="6" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="ap_coduni" nullable="true" remarks="" size="7" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="ap_autoriz" nullable="true" remarks="" size="13" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="ap_cmp" nullable="true" remarks="" size="6" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="ap_pripal" nullable="true" remarks="" size="10" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="ap_vl_ap" nullable="true" remarks="" size="14" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="ap_ufmun" nullable="true" remarks="" size="6" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="ap_tpups" nullable="true" remarks="" size="2" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="ap_tippre" nullable="true" remarks="" size="2" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="ap_mn_ind" nullable="true" remarks="" size="1" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="ap_cnpjcpf" nullable="true" remarks="" size="14" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="ap_cnpjmnt" nullable="true" remarks="" size="14" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="ap_cnspcn" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="ap_coidade" nullable="true" remarks="" size="1" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="ap_nuidade" nullable="true" remarks="" size="2" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="ap_sexo" nullable="true" remarks="" size="1" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="ap_racacor" nullable="true" remarks="" size="2" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="ap_munpcn" nullable="true" remarks="" size="6" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="20" name="ap_ufnacio" nullable="true" remarks="" size="3" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="21" name="ap_ceppcn" nullable="true" remarks="" size="8" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="22" name="ap_ufdif" nullable="true" remarks="" size="2" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="ap_mndif" nullable="true" remarks="" size="2" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="24" name="ap_dtinic" nullable="true" remarks="" size="8" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="25" name="ap_dtfim" nullable="true" remarks="" size="8" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="26" name="ap_tpaten" nullable="true" remarks="" size="2" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="27" name="ap_tpapac" nullable="true" remarks="" size="1" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="28" name="ap_motsai" nullable="true" remarks="" size="2" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="29" name="ap_obito" nullable="true" remarks="" size="1" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="30" name="ap_encerr" nullable="true" remarks="" size="1" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="31" name="ap_perman" nullable="true" remarks="" size="1" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="32" name="ap_alta" nullable="true" remarks="" size="1" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="33" name="ap_transf" nullable="true" remarks="" size="1" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="34" name="ap_dtocor" nullable="true" remarks="" size="8" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="35" name="ap_codemi" nullable="true" remarks="" size="10" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="36" name="ap_catend" nullable="true" remarks="" size="2" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="37" name="ap_apacant" nullable="true" remarks="" size="13" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="38" name="ap_unisol" nullable="true" remarks="" size="7" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="39" name="ap_dtsolic" nullable="true" remarks="" size="8" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="40" name="ap_dtaut" nullable="true" remarks="" size="8" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="41" name="ap_cidcas" nullable="true" remarks="" size="4" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="42" name="ap_cidpri" nullable="true" remarks="" size="4" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="43" name="ap_cidsec" nullable="true" remarks="" size="4" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="44" name="ap_etnia" nullable="true" remarks="" size="4" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="45" name="am_peso" nullable="true" remarks="" size="3" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="46" name="am_altura" nullable="true" remarks="" size="3" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="47" name="am_transpl" nullable="true" remarks="" size="1" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="48" name="am_qtdtran" nullable="true" remarks="" size="2" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="49" name="am_gestant" nullable="true" remarks="" size="1" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="50" name="ap_natju" nullable="true" remarks="" size="4" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="51" name="wh_year" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="52" name="wh_month" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="53" name="wh_uf" nullable="true" remarks="" size="2" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="54" name="wh_dbc_file" nullable="true" remarks="" size="12" type="bpchar" typeCode="1"/>
+      </table>
+   </tables>
+   <routines>
+      <routine dataAccess="MODIFIES" deterministic="false" name="&quot;FN_MEDICAMENTO_REMOVER_DUPLICADOS&quot;" returnType="void" securityType="INVOKER" type="FUNCTION">
+         <comment/>
+         <definition language="PLPGSQL"><![CDATA[DECLARE
+  qtd_duplicados int;
+BEGIN
+	SELECT count(*) INTO qtd_duplicados
+	FROM desafio_curadoria."TB_MEDICAMENTO_AUTORIZACAO_DUPLICADA";
+
+	IF (qtd_duplicados <= 0) THEN
+		DROP TABLE IF EXISTS desafio_curadoria."TB_MEDICAMENTO_AUTORIZACAO_DUPLICADA";
+	END IF;
+END;]]></definition>
+      </routine>
+   </routines>
+</database>
