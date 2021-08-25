@@ -1,3 +1,107 @@
+--verificar se existe uma instancia do postgresql funcionando
+--verificar se existe um usuário postgres
+--executar o script no Query Browser ou via pssql
+
+DROP TABLE IF EXISTS desafio_curadoria."TB_PACIENTE_AUX";
+
+CREATE TABLE desafio_curadoria."TB_PACIENTE_AUX" AS
+SELECT DISTINCT
+    ap_cnspcn as ap_cnspcn,
+    CAST (ap_coidade AS SMALLINT) as ap_coidade,
+    ap_sexo,
+    CAST (ap_racacor AS SMALLINT) as ap_racacor,    
+    CAST (ap_ufnacio AS SMALLINT) as ap_ufnacio,
+    ap_etnia as ap_etnia
+FROM desafio_curadoria."WH_AMAPAC";
+
+ALTER TABLE desafio_curadoria."TB_PACIENTE_AUX" OWNER TO postgres;
+
+
+
+INSERT INTO desafio_curadoria."TB_PACIENTE"(
+    ap_cnspcn,
+    ap_coidade,
+    ap_sexo,
+    ap_racacor,
+    ap_ufnacio,
+    ap_etnia
+) 
+SELECT DISTINCT
+    ap_cnspcn,
+    ap_coidade,
+    ap_sexo,
+    ap_racacor,
+    ap_ufnacio,
+    ap_etnia
+FROM desafio_curadoria."TB_PACIENTE_AUX";
+
+ALTER TABLE desafio_curadoria."TB_PACIENTE" ADD CONSTRAINT TB_PACIENTE_PK_ID PRIMARY KEY (id);
+
+CREATE INDEX "IDX_TB_PACIENTE_ID" ON desafio_curadoria."TB_PACIENTE" USING btree (id);
+
+CREATE INDEX "IDX_TB_PACIENTE_AP_CNSPCN" ON desafio_curadoria."TB_PACIENTE" USING btree (ap_cnspcn);
+
+DROP TABLE IF EXISTS desafio_curadoria."TB_PACIENTE_AUX";
+
+
+
+DROP TABLE IF EXISTS desafio_curadoria."TB_ESTABELECIMENTO_AUX";
+
+CREATE TABLE desafio_curadoria."TB_ESTABELECIMENTO_AUX" AS
+SELECT DISTINCT
+    CAST (ap_coduni AS INTEGER) as ap_coduni,
+    ap_mvm,
+    ap_condic,
+    CAST (ap_gestao AS INTEGER) as ap_gestao,
+    CAST (ap_ufmun AS INTEGER) as ap_ufmun,	
+    CAST (ap_tpups AS SMALLINT) as ap_tpups,	    
+    ap_mn_ind,	
+    CAST (ap_tippre AS SMALLINT) as ap_tippre,
+    CAST (ap_cnpjcpf AS BIGINT) as ap_cnpjcpf,
+    CAST (ap_cnpjmnt AS BIGINT) as ap_cnpjmnt,
+    CAST (ap_natju AS SMALLINT) as ap_natju
+FROM desafio_curadoria."WH_AMAPAC";
+
+ALTER TABLE desafio_curadoria."TB_ESTABELECIMENTO_AUX" OWNER TO postgres;
+
+
+INSERT INTO desafio_curadoria."TB_ESTABELECIMENTO"(
+    ap_coduni,
+    ap_mvm,
+    ap_condic,
+    ap_gestao,	
+    ap_ufmun,	
+    ap_tpups,	
+    ap_tippre,    
+    ap_mn_ind,	
+    ap_cnpjcpf,	
+    ap_cnpjmnt,
+    ap_natju
+) 
+SELECT DISTINCT
+    ap_coduni,
+    ap_mvm,
+    ap_condic,
+    ap_gestao,	
+    ap_ufmun,	
+    ap_tpups,	
+    ap_tippre,    
+    ap_mn_ind,	
+    ap_cnpjcpf,	
+    ap_cnpjmnt,
+    ap_natju
+FROM desafio_curadoria."TB_ESTABELECIMENTO_AUX";
+
+
+ALTER TABLE desafio_curadoria."TB_ESTABELECIMENTO" ADD CONSTRAINT TB_ESTABELECIMENTO_PK_ID PRIMARY KEY (id);
+
+CREATE INDEX "IDX_TB_ESTABELECIMENTO_ID" ON desafio_curadoria."TB_ESTABELECIMENTO" USING btree (id);
+
+CREATE INDEX "IDX_TB_ESTABELECIMENTO_AP_CODUNI" ON desafio_curadoria."TB_ESTABELECIMENTO" USING btree (ap_coduni);
+
+DROP TABLE IF EXISTS desafio_curadoria."TB_ESTABELECIMENTO_AUX";
+
+
 DROP TABLE IF EXISTS desafio_curadoria."TB_MEDICAMENTO_AUX";
 
 CREATE TABLE desafio_curadoria."TB_MEDICAMENTO_AUX" AS
@@ -45,7 +149,6 @@ CREATE INDEX "IDX_TB_MEDICAMENTO_AUX_AP_CODUNI" ON desafio_curadoria."TB_MEDICAM
 CREATE INDEX "IDX_TB_MEDICAMENTO_AUX_AP_CNSPCN" ON desafio_curadoria."TB_MEDICAMENTO_AUX" USING btree (ap_cnspcn);
 
 
-
 DROP TABLE IF EXISTS desafio_curadoria."TB_MEDICAMENTO_AUTORIZACAO_DUPLICADA";
 
 CREATE TABLE desafio_curadoria."TB_MEDICAMENTO_AUTORIZACAO_DUPLICADA" AS
@@ -58,58 +161,11 @@ ORDER BY 2 DESC;
 ALTER TABLE desafio_curadoria."TB_MEDICAMENTO_AUTORIZACAO_DUPLICADA" OWNER TO postgres;
 
 
-
 DELETE FROM desafio_curadoria."TB_MEDICAMENTO_AUX" as aux
 WHERE aux.ap_autoriz IN (
 	  SELECT dupl.ap_autoriz
 	  FROM desafio_curadoria."TB_MEDICAMENTO_AUTORIZACAO_DUPLICADA" as dupl
-)
-
-
-
-DROP TABLE IF EXISTS desafio_curadoria."TB_MEDICAMENTO";
-
-CREATE TABLE desafio_curadoria."TB_MEDICAMENTO"(
-    ap_autoriz	bigint,
-    id_pcn      bigint,
-    id_estab	integer,
-    ap_cmp	    character(6),
-    ap_pripal	bigint,
-    ap_vl_ap	numeric(14,2),
-    ap_nuidade	smallint,
-    ap_ufdif	smallint,
-    ap_mndif	smallint,
-    ap_dtinic	character(8),
-    ap_dtfim	character(8),
-    ap_tpaten	smallint,
-    ap_tpapac	smallint,
-    ap_motsai	smallint,
-    ap_obito	smallint,
-    ap_encerr	smallint,
-    ap_perman	smallint,
-    ap_alta	    smallint,
-    ap_transf	smallint,
-    ap_dtocor	character(8),
-    ap_codemi	character(10),
-    ap_catend	character(2),
-    ap_apacant	character(13),
-    ap_unisol	integer,
-    ap_dtsolic	character(8),
-    ap_dtaut	character(8),
-    ap_cidcas	character(4),
-    ap_cidpri	character(4),
-    ap_cidsec	character(4),
-    am_peso	    numeric(5,2),
-    am_altura	numeric(5,2),
-    am_transpl	character(1),
-    am_qtdtran	smallint,
-    am_gestant	character(1)
-)
-WITH (
-  OIDS=FALSE
 );
-
-ALTER TABLE desafio_curadoria."TB_MEDICAMENTO" OWNER TO postgres;
 
 
 INSERT INTO desafio_curadoria."TB_MEDICAMENTO"(
@@ -188,5 +244,3 @@ LEFT JOIN desafio_curadoria."TB_PACIENTE" as pcn
 ON (aux.ap_cnspcn = pcn.ap_cnspcn)
 LEFT JOIN desafio_curadoria."TB_ESTABELECIMENTO" as estab
 ON (aux.ap_coduni = estab.ap_coduni)
-
-

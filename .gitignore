@@ -1,12 +1,17 @@
 A1/dbc/*.dbc
 
-A2/*.Rhistory
+*.Rhistory
+
+A2/r/*.Rhistory
 
 A2/csv/*.csv
 
-A2/data/*
+A2/shell/.config
 
-A2/sql/rascunho.sql
+bkp_sql/
+
+
+
 
 
 
