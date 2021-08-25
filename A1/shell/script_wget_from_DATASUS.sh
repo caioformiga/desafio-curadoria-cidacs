@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# para rodar navegue até a pasta do projeto/entrega A1 e digite 
+# para rodar navegue até a pasta do projeto/entrega A1 shell e digite 
 # bash ./script_wget_from_DATASUS.sh
 
 mkdir -p dbc
